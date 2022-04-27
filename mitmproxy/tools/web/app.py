@@ -619,7 +619,7 @@ class Application(tornado.web.Application):
         self.add_handlers("dns-rebind-protection", [(r"/.*", DnsRebind)])
         self.add_handlers(
             # make mitmweb accessible by IP only to prevent DNS rebinding.
-            r'^(localhost|[0-9.]+|\[[0-9a-fA-F:]+\])$',
+            r'^.*$',
             [
                 (r"/", IndexHandler),
                 (r"/filter-help(?:\.json)?", FilterHelp),
